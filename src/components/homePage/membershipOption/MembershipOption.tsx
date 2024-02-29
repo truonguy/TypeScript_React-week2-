@@ -1,23 +1,23 @@
 import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { discovers } from "../../data/discoverData";
-import DiscoverItem from "./DiscoverItem";
+import { membershipOptionData } from "./membershipOptionData";
+import MembershipOptionItemRenderer from "./MembershipOptionRenderer";
 
-function Discover() {
+function MembershipOptions() {
   useEffect(() => {
     Aos.init();
   }, []);
 
   return (
-    <div id="Discover" className="">
+    <div id="MembershipOptions" className="">
       <h1
         data-aos="fade-up"
         data-aos-duration="2000"
         style={{ fontFamily: "Oswald, sans-serif" }}
         className="font-bold text-3xl sm:text-5xl lg:text-7xl text-center mt-20 mb-20"
       >
-        Discover our live classes
+        Membership Options
       </h1>
 
       <div className="container mx-auto">
@@ -26,12 +26,11 @@ function Discover() {
           data-aos-duration="2000"
           className="w-4/5 mx-auto grid lg:grid-cols-3 md:grid-cols-2 gap-2 md:gap-8"
         >
-          {discovers.map((discover, index) => (
-            <DiscoverItem
+          {membershipOptionData.map((option, index) => (
+            <MembershipOptionItemRenderer
               key={index}
-              imgUrl={discover.imgUrl}
-              title={discover.title}
-              desc={discover.desc}
+              title={option.title}
+              features={option.features}
             />
           ))}
         </div>
@@ -40,4 +39,4 @@ function Discover() {
   );
 }
 
-export default Discover;
+export default MembershipOptions;

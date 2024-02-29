@@ -1,18 +1,12 @@
 import { useState } from "react";
-import "../src/css/main.css";
-import Header from "./layouts/header/Header";
-import HomePage from "./layouts/main/pages/Home/HomePage";
-import Footer from "./layouts/footer/Footer";
+import "../src/assets/styles/css/main.css";
 import "./index.css";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <div className="App">
-      <div className=" ">
-        <Header />
-        <HomePage></HomePage>
-        <Footer />
-      </div>
+      <MainPage />
     </div>
   );
 }
