@@ -3,7 +3,7 @@ interface MembershipOption {
   features: string[];
 }
 
-export const membershipOptions: MembershipOption[] = [
+export const membershipOptionData: MembershipOption[] = [
   {
     title: "Health",
     features: [
