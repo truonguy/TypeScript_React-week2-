@@ -1,0 +1,38 @@
+import React from "react";
+
+interface DiscoverItemProps {
+  imgUrl: string;
+  title: string;
+  desc: string;
+}
+
+const DiscoverItem: React.FC<DiscoverItemProps> = ({ imgUrl, title, desc }) => {
+  return (
+    <div className="rounded-md shadow-md overflow-hidden mt-8">
+      <div
+        className="flex h-80 w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${imgUrl})`, backgroundSize: "cover" }}
+      ></div>
+      <div className="text-center bg-white rounded-t rounded-b-none overflow-hidden shadow">
+        <a href="#" className="flex flex-col no-underline hover:no-underline">
+          <div className="font-bold text-3xl text-gray-800 px-6 mt-4">
+            {title}
+          </div>
+          <i className="text-gray-800 text-base px-6 mt-4">{desc}</i>
+        </a>
+        <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow">
+          <div className="flex items-center justify-center">
+            <a
+              href="#"
+              className="mx-auto lg:mx-0 underline text-black font-bold rounded-full my-6 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out py-2 px-4"
+            >
+              LEARN MORE
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DiscoverItem;
